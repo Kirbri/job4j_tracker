@@ -71,6 +71,14 @@ public class Tracker {
         return false;
     }
 
+    public void delete(int id) {
+        byte index = (byte) indexOf(id);
+        if (index != -1) {
+            System.arraycopy(items, index + 1, items, index, size - index - 1);
+            items[size--] = null;
+        }
+    }
+
     @Override
     public boolean equals(Object o) {
         if (this == o) {
