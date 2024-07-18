@@ -12,7 +12,7 @@ public class CarService {
             System.out.println("Название статуса: " + s.name() + ", Порядковый номер статуса: " + s.ordinal());
         }
 
-        String accepted = "accepted";
+        String accepted = "ACCEPTED";
         Status status = Status.valueOf(accepted);
         System.out.println(status);
 
