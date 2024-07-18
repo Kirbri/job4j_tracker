@@ -75,7 +75,8 @@ public class Tracker {
         boolean result = index != -1;
         if (result) {
             System.arraycopy(items, index + 1, items, index, size - index - 1);
-            items[size--] = null;
+            items[size - 1] = null;
+            size--;
         }
     }
 
