@@ -15,7 +15,7 @@ public class HierarchyUsage {
 
         /* Ошибка в приведении типа.
         Object bicycle = new Bicycle();
-        Car carBicycle = (Car) bicycle; // код завершится с ошибкой приведения типов ClassCastException */
+        Car carBicycle = (Car) bicycle; , код завершится с ошибкой приведения типов ClassCastException */
 
         System.out.println(new Car("Mazda", "X8"));
         System.out.println(new Bicycle());
