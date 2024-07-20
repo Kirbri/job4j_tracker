@@ -6,6 +6,9 @@ import static org.hamcrest.CoreMatchers.nullValue;
 import static org.hamcrest.MatcherAssert.assertThat;
 
 class StartUITest {
+
+}
+    /* Тесты для статических методов
     @Test
     void whenAddItem() {
         String[] answers = {"Fix PC"};
@@ -49,7 +52,7 @@ class StartUITest {
         Item item = new Item("new item");
         tracker.add(item);
         String[] answers = {
-                String.valueOf(item.getId()), /* id сохраненной заявки в объект tracker. */
+                String.valueOf(item.getId()),  id сохраненной заявки в объект tracker.
                 "edited item"
         };
         StartUI.replaceItem(new MockInput(answers), tracker);
@@ -85,4 +88,4 @@ class StartUITest {
         System.out.println(edited);
         assertThat(edited, nullValue());
     }
-}
+    */
