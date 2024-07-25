@@ -38,14 +38,4 @@ public class SingleTracker {
     public void delete(int id) {
         tracker.delete(id);
     }
-
-    @Override
-    public boolean equals(Object o) {
-        return tracker.equals(o);
-    }
-
-    @Override
-    public int hashCode() {
-        return tracker.hashCode();
-    }
 }
