@@ -4,7 +4,6 @@ public class EscapeExample {
     public static void main(String[] args) {
         String string1 = "Я изучаю на \"Job4j\" экранирование символов";
         System.out.println(string1);
-
         char escape = '\"';
         System.out.println(escape);
         System.out.println('\'');

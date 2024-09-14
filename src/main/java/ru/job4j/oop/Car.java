@@ -3,6 +3,8 @@ package ru.job4j.oop;
 public class Car extends Transport {
     private String brand;
     private String model;
+    private Transmission.Clutch clutch;
+    private Transmission transmission;
 
     public Car(String brand, String model) {
         this.brand = brand;
@@ -17,6 +19,13 @@ public class Car extends Transport {
 
         public void accelerate() {
             System.out.println("Ускорение");
+        }
+
+        private class Clutch {
+
+            public void torqueTransmission() {
+                System.out.println("Передача крутящего момента");
+            }
         }
 
     }
@@ -35,6 +44,8 @@ public class Car extends Transport {
         private String model = "Модель TripComputer";
 
         public void getInfo() {
+            System.out.println("Марка: " + brand);
+            System.out.println("Модель: " + model);
             System.out.println("Модель TripComputer: " + this.model);
             System.out.println("Модель Car: " + Car.this.model);
         }
