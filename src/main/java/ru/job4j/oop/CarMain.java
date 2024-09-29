@@ -9,9 +9,6 @@ public class CarMain {
             }
         };
         Car.Transmission transmission = car.new Transmission();
-//        Car.Transmission.Clutch clutch;
-//        clutch = transmission.new Clutch();
-//        clutch.torqueTransmission();
         Car.Brakes brakes = car.new Brakes();
         car.startEngine();
         transmission.accelerate();
