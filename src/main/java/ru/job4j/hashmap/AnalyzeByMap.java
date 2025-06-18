@@ -83,13 +83,8 @@ public class AnalyzeByMap {
 
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (scoreBySubject.containsKey(subject.name())) {
-                    double def = scoreBySubject.getOrDefault(subject.name(), 0.0);
-                    def += subject.score();
-                    scoreBySubject.put(subject.name(), def);
-                } else {
-                    scoreBySubject.put(subject.name(), (double) subject.score());
-                }
+                scoreBySubject.put(subject.name(), scoreBySubject.getOrDefault(subject.name(), 0.0)
+                        + subject.score());
             }
         }
 
