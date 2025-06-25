@@ -12,7 +12,7 @@ class ValidateInputTest {
     void whenInvalidInput() {
         Output output = new StubOutput();
         Input in = new MockInput(
-                new String[] {"one", "1"}
+                new String[]{"one", "1"}
         );
         ValidateInput input = new ValidateInput(output, in);
         int selected = input.askInt("Enter menu:");
@@ -23,7 +23,7 @@ class ValidateInputTest {
     void whenValidInput() {
         Output output = new StubOutput();
         Input in = new MockInput(
-                new String[] {"0"}
+                new String[]{"0"}
         );
         ValidateInput input = new ValidateInput(output, in);
         int selected = input.askInt("Enter menu:");
@@ -34,7 +34,7 @@ class ValidateInputTest {
     void whenValidInputMore() {
         Output output = new StubOutput();
         Input in = new MockInput(
-                new String[] {"0", "1", "2"}
+                new String[]{"0", "1", "2"}
         );
         ValidateInput input = new ValidateInput(output, in);
         int selected0 = input.askInt("Enter menu:");
@@ -49,7 +49,7 @@ class ValidateInputTest {
     void whenInvalidMinusInput() {
         Output output = new StubOutput();
         Input in = new MockInput(
-                new String[] {"-1", "-10"}
+                new String[]{"-1", "-10"}
         );
         ValidateInput input = new ValidateInput(output, in);
         int selectedMinus1 = input.askInt("Enter menu:");

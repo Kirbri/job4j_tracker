@@ -5,7 +5,7 @@ public class ExampleInterface {
         /* ... код класса ... */
 
         interface InnerExampleInterface {
-        /* ... код интерфейса ... */
+            /* ... код интерфейса ... */
         }
     }
 
