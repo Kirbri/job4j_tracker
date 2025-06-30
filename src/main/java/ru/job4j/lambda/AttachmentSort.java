@@ -31,6 +31,19 @@ public class AttachmentSort {
         attachments.sort(comparatorName);
         System.out.println(attachments);
 
+        Comparator<String> numberString = (left, right) -> {
+            int first = Integer.valueOf(left.substring(0, left.indexOf(".")));
+            int second = Integer.valueOf(right.substring(0, right.indexOf(".")));
+            return Integer.compare(first, second);
+        };
+
+        Comparator<String> comparatorLength = (left, right) -> Integer.compare(right.length(), left.length());
+
+        Comparator<Attachment> comparator = (left, right) -> {
+            System.out.println("compare - " + left.getSize() + " : " + right.getSize());
+            return Integer.compare(left.getSize(), right.getSize());
+        };
+
         ArrayList<Integer> list = new ArrayList<Integer>() {
             @Override
             public boolean add(Integer o) {

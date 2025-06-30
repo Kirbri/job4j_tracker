@@ -9,5 +9,4 @@ public class AttachmentComp implements Comparator {
         Attachment right = (Attachment) o2;
         return Integer.compare(left.getSize(), right.getSize());
     }
-
 }
