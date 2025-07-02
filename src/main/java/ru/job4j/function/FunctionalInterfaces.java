@@ -19,15 +19,14 @@ public class FunctionalInterfaces {
         map.put(6, "six");
         map.put(7, "seven");
 
-        BiPredicate<Integer, String> biPredicate = (number, string) -> number % 2 == 0 || map.get(number).length() == 4;
+        BiPredicate<Integer, String> biPredicate = (number, string) -> number % 2 == 0 || string.length() == 4;
 
         for (Integer key : map.keySet()) {
-            biPredicate.test(key, map.get(key));
+            if (biPredicate.test(key, map.get(key))) {
                 System.out.println("key: " + key + " value: " + map.get(key));
+            }
         }
-        /*
-            Заменить создание ArrayList из значений Map на Supplier, объявлен ниже, требуется его реализовать.
-         */
+
         Supplier<List<String>> supplier = () -> new ArrayList<>(map.values());
 
         Consumer<String> consumer = string -> System.out.println(string);
