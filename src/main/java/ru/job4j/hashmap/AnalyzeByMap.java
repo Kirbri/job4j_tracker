@@ -40,15 +40,8 @@ public class AnalyzeByMap {
 
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                if (sumBySubject.containsKey(subject.name())) {
-                    count++;
-                    double def = sumBySubject.getOrDefault(subject.name(), 0.0);
-                    def += subject.score();
-                    sumBySubject.put(subject.name(), def);
-                } else {
-                    count++;
-                    sumBySubject.put(subject.name(), (double) subject.score());
-                }
+                count++;
+                sumBySubject.merge(subject.name(), (double) subject.score(), Double::sum);
             }
         }
         count /= sumBySubject.size();
@@ -83,8 +76,7 @@ public class AnalyzeByMap {
 
         for (Pupil pupil : pupils) {
             for (Subject subject : pupil.subjects()) {
-                scoreBySubject.put(subject.name(), scoreBySubject.getOrDefault(subject.name(), 0.0)
-                        + subject.score());
+                scoreBySubject.merge(subject.name(), (double) subject.score(), Double::sum);
             }
         }
 
