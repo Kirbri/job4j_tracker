@@ -1,7 +1,5 @@
 package ru.job4j.stream;
 
-import ru.job4j.hashmap.Label;
-
 import java.util.List;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;

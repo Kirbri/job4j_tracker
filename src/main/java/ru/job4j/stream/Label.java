@@ -48,9 +48,9 @@ public class Label {
 
     @Override
     public String toString() {
-        return "Label["
-                + "name=" + name
-                + ", score=" + price
-                + ']';
+        return "Label{"
+                + "name='" + name + '\''
+                + ", price=" + price
+                + '}';
     }
 }
