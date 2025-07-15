@@ -12,15 +12,17 @@ public class Card {
     }
 
     public static void main(String[] args) {
-//        for (Suit s : Suit.values()) {
-//            for (Value v : Value.values()) {
-//                System.out.println(s + " " + v);
-//            }
-//        }
-
         Stream.of(Suit.values())
                 .flatMap(suits -> Stream.of(Value.values())
-                        .map(value -> suits + " " + value))
+                        .map(value -> new Card(suits, value)))
                 .forEach(System.out::println);
+    }
+
+    @Override
+    public String toString() {
+        return "Card{"
+                + "suit=" + suit
+                + ", value=" + value
+                + '}';
     }
 }
