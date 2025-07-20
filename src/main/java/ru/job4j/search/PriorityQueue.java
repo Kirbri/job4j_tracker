@@ -20,12 +20,12 @@ public class PriorityQueue {
      * Метод принимает на вход заявку и добавляет ее в очередь.
      * * Если встречаются 2 задания с одинаковым приоритетом, то в очереди
      * * они распределяются по принципу FIFO.
-     * * @param task задача которая добавляется в очередь
+     * * @param task задача, которая добавляется в очередь
      */
     public void put(Task task) {
-        int index = 0;
+        var index = 0;
         if (!tasks.isEmpty() && task.getPriority() >= tasks.get(0).getPriority()) {
-            for (Task element : tasks) {
+            for (var element : tasks) {
                 if (element.getPriority() <= task.getPriority()) {
                     index++;
                 }
