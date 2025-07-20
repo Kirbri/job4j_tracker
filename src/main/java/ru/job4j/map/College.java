@@ -1,6 +1,7 @@
 package ru.job4j.map;
 
 import java.util.Map;
+import java.util.Optional;
 import java.util.Set;
 
 public class College {
@@ -19,16 +20,15 @@ public class College {
         return null;
     }
 
-    public Student findByAccount(String account) {
+    public Optional<Student> findByAccount(String account) {
         return students.keySet()
                 .stream()
                 .filter(student -> student.account().equals(account))
-                .findFirst()
-                .orElse(null);
+                .findFirst();
     }
 
     public Subject findBySubjectNameOld(String account, String name) {
-        Student student = findByAccount(account);
+        Student student = findByAccountOld(account);
         if (student != null) {
             Set<Subject> subjects = students.get(student);
             for (Subject subject : subjects) {
@@ -40,16 +40,12 @@ public class College {
         return null;
     }
 
-    public Subject findBySubjectName(String account, String name) {
-        Student student = findByAccount(account);
-        if (student == null) {
-            return null;
-        }
-        return students.get(student)
+    public Optional<Subject> findBySubjectName(String account, String name) {
+        Optional<Student> student = findByAccount(account);
+        return student.isEmpty() ? Optional.empty() : students.get(student.get())
                 .stream()
                 .filter(subject -> subject.name().equals(name))
-                .findFirst()
-                .orElse(null);
+                .findFirst();
     }
 
     public static void main(String[] args) {
@@ -60,9 +56,9 @@ public class College {
                 )
         );
         College college = new College(students);
-        Student student = college.findByAccount("000001");
+        Optional<Student> student = college.findByAccount("000001");
         System.out.println("Найденный студент: " + student);
-        Subject english = college.findBySubjectName("000001", "English");
-        System.out.println("Оценка по найденному предмету: " + english.score());
+        Optional<Subject> english = college.findBySubjectName("000001", "English");
+        System.out.println("Предмет и оценка по нему: " + english);
     }
 }
